@@ -1,0 +1,22 @@
+<svg
+    width="64"
+    height="64"
+    viewBox="0 0 16.933 16.933"
+    xmlns="http://www.w3.org/2000/svg"
+    style="background-color:transparent;"
+>
+    <circle r="8" cx="50%" cy="50%" fill="white" />
+    <text
+        x="4.95"
+        y="8.982"
+        xml:space="preserve"
+        transform="scale(.75092 1.3317)"
+        style="font-weight:900;font-size:7.39268px;font-family:Arial;-inkscape-font-specification:&quot;Arial Heavy&quot;;opacity:1;fill:#3939ff;fill-opacity:1;stroke:#f19797;stroke-width:.252023;stroke-opacity:0"
+    >
+        <tspan
+            style="font-size:7.39268px;fill:#3939ff;fill-opacity:1;stroke:#f19797;stroke-width:.252023;stroke-opacity:0"
+            x="4.95"
+            y="8.982"
+        >MU</tspan>
+    </text>
+</svg>
