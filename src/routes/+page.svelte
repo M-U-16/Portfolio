@@ -80,7 +80,7 @@
             <h2 slot="head">Kanuverleih Infoseite</h2>
             Eine einfache statische Webseite für den
             Kanuverleih von meinem Vater.
-        </Project>        
+        </Project>
     </div>
 </HeadingContainer>
 <Footer />

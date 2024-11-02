@@ -1,5 +1,5 @@
 <div class="project">
-    <video autoplay loop>
+    <video autoplay loop muted playsinline>
         <source src={src} type="video/webm">
         <track kind="captions" />
     </video>
