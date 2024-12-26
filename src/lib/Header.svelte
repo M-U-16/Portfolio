@@ -1,13 +1,18 @@
-<div class="header-container">
+<div
+    class="header-container"
+>
     <header>
         <div class="text">
-            <h1>Lorem ipsum dolor sit amet.</h1>
+            <h1 class="heading">
+                Hallo, ich bin Maurice,
+                angehender Softwareentwickler und Technikbegeisterter.
+            </h1>
             <p>
-                Lorem ipsum dolor sit amet,
-                consectetur adipisicing elit.
-                Corrupti ipsum optio, id, sunt tenetur provident
-                veniam iste laborum itaque aliquam harum rerum voluptates,
-                culpa odio.
+                Zurzeit bin ich dabei mein Abitur zu machen.
+                Für meinen Weg nach dem Abitur, suche ich nach
+                einem Unternehmen, bei dem ich meine Leidenschaft, das Programmieren,
+                auch beruflich ausführen kann und mein Wissen in den Bereichen der
+                Softwareentwicklung zu erweitern. 
             </p>
         </div>
         <div class="links">
@@ -51,25 +56,27 @@
         height: 50vh;
         min-height: 30rem;
         align-items: center;
-        background: url(/topography.svg);
+        background: url(/reduced-topography.svg);
+        background-position: 0 0;
+        background-attachment: fixed;
         view-transition-name: header-container;
+        transition: 0.1s linear;
     }
     
     header {
         margin: auto;
-        padding: 2rem;
-        max-width: 40rem;
-        font-size: 1.2rem;
         width: var(--default-width);
         view-transition-name: header;
-        /* margin: 1rem;
-        border-radius: 1rem;
-        background-color: white;
-        box-shadow: 0 0 3px rgb(198, 198, 198); */
+        font-size: 18px;
+        max-width: var(--default-max-width);
     }
     
+    header .heading {
+        text-wrap: balance;
+    }
+
     .text p {
-        line-height: 1.5;
+        line-height: 1.3;
     }
 
     .links {
@@ -112,5 +119,21 @@
 
     .style-element svg polygon {
         fill: var(--bg-color);
+    }
+
+    @media screen and (max-width: 900px) {
+        header .heading {
+            font-size: 1.8rem;
+        }
+    }
+
+    @media screen and (max-width: 500px) {
+        .header-container {
+            height: 50vh;
+        }
+
+        header .text p {
+            line-height: 1.2;
+        }
     }
 </style>

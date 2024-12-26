@@ -7,18 +7,22 @@
 }
 
 :root {
-    --content-width: 90%;
     --navbar-height: 4rem;
-    --max-content-width: 50rem;
     --default-box-shadow: inset 0px 0px 5px #cfcfcfb0;
     --navbar-color: white;
 	--accent-color: #3939ff;
 	--bg-color: #fafafe;
+	--default-width: 70%;
+	--default-max-width: 50rem;
+}
+
+@media screen and (max-width: 700px) {
+	:root {
+		--default-width: 85%;
+	}
 }
 
 body {
-	--default-width: 70%;
-	--default-max-width: 60rem
 
     min-height: 100vh;
     background-color: #fafafe;
@@ -29,6 +33,15 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+a {
+	color: var(--accent-color);
+}
+
+.icon svg {
+	width: 100%;
+	height: 100%;
 }
 
 @keyframes fade-in {

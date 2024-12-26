@@ -15,7 +15,9 @@
             class="live-site"
             >
                 <Open />
-                <span>Live Seite</span>
+                <slot name="live-link">
+                    <span>Live Seite</span>
+                </slot>
             </a>
             <a
                 href={projectLink}
@@ -30,7 +32,7 @@
 </div>
 
 <script>
-    import Github from "$lib/icons/Github.svelte"
+    import Github from "$lib/icons/dev/Github.svelte"
     import Open from "$lib/icons/Open.svelte"
 
     export let src
@@ -40,28 +42,35 @@
 
 <style>
     .project {
+        display: grid;
+        grid-template-columns: subgrid;
+        grid-template-rows: auto 1fr;
+        max-height: 30rem;
+
         width: 100%;
         box-shadow: 0px 0px 3px rgb(202, 202, 202);
         border-radius: 5px;
-        overflow: hidden;
-        display: flex;
-        max-width: 400px;
-        flex-direction: column;
         background-color: white;
+        overflow: hidden;
     }
 
     .project video {
-        max-width: 600px;
-        width: 100%;
+       /*  width: 100%; */
+       width: 100%;
+       max-height: min-content;
     }
 
     .project-info {
-        padding: 1rem;
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        
+        padding: 0.5rem 1rem 1rem 1rem;
     }
 
     .links {
-        display: flex;
         gap: 1rem;
+        height: 100%;
+        display: flex;
     }
     
     .github-repo,
@@ -70,7 +79,7 @@
         display: flex;
         align-items: center;
         text-decoration: none;
-        width: 10rem;
+        width: 50%;
         justify-content: center;
         padding: 0.5rem;
         border-radius: 5px;
@@ -78,6 +87,12 @@
         color: white;
         font-size: 1.1rem;
         transition: 0.3s ease;
+    }
+
+    .description {
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+        width: 100%;
     }
 
     .live-site {

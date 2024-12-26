@@ -1,0 +1,219 @@
+<HeadingContainer heading="Skills">
+    <div class="skills-container">
+        <div class="frontend">
+            <h2>Frontend</h2>
+            <div class="skills">
+                <a
+                    class="skill"
+                    title="Was ist Html?"
+                    href="https://de.wikipedia.org/wiki/Hypertext_Markup_Language"
+                >
+                    <Html/>
+                    <h3>Html</h3>
+                </a>
+                <a
+                    class="skill"
+                    title="Was ist Css?"
+                    href="https://de.wikipedia.org/wiki/Cascading_Style_Sheets"  
+                >
+                    <Css/>
+                    <h3>CSS</h3>
+                </a>
+                <a
+                    class="skill"
+                    title="Was ist Javascript?"
+                    href="https://de.wikipedia.org/wiki/JavaScript"
+                >
+                    <Javascript />
+                    <h3>Javascript</h3>
+                </a>
+                <a
+                    class="skill"
+                    title="Was ist React?"
+                    href="https://react.dev/"
+                >
+                    <React />
+                    <h3>React</h3>
+                </a>
+                <a
+                    class="skill"
+                    title="Was ist Svelte?"
+                    href="https://svelte.dev"
+                >
+                    <Svelte />
+                    <h3>Svelte</h3>
+                </a>
+            </div>
+        </div>
+        <div class="backend">
+            <h2>Backend</h2>
+            <div class="skills">
+                <a
+                    class="skill"
+                    title="Was ist Python?"
+                    href="https://www.python.org"
+                >
+                    <Python />
+                    <h3>Python</h3>
+                </a>
+                <a
+                    class="skill"
+                    title="Was ist Go?"
+                    href="https://go.dev"
+                >
+                    <Go />
+                    <h3>Go</h3>
+                </a>
+                <a
+                    class="skill"
+                    title="Was ist C?"
+                    href="https://en.wikipedia.org/wiki/C_(programming_language)"
+                >
+                    <C />
+                    <h3>C</h3>
+                </a>
+                <a
+                    class="skill"
+                    title="Was ist Node.js"
+                    href="https://nodejs.org/en"
+                >
+                    <NodeJs />
+                    <h3>Node.js</h3>
+                </a>
+                <a
+                    class="skill"
+                    title="Was ist ExpressJS?"
+                    href="https://expressjs.com"
+                >
+                    <Express />
+                    <h3>ExpressJS</h3>
+                </a>
+                <a
+                    class="skill"
+                    title="Was ist Flask?"
+                    href="https://de.wikipedia.org/wiki/Flask"
+                >
+                    <Flask />
+                    <h3>Flask</h3>
+                </a>
+                <a
+                    class="skill"
+                    title="Was ist Nginx?"
+                    href="https://nginx.org/en"  
+                >
+                    <Nginx />
+                    <h3>Nginx</h3>
+                </a>
+            </div>
+        </div>
+        <div class="last-container">
+            <div class="database">
+                <h2>Datenbanken</h2>
+                <div class="skills">
+                    <a
+                        class="skill"
+                        title="Was ist Sqlite?"
+                        href="https://www.sqlite.org/index.html"
+                    >
+                        <Sqlite />
+                        <h3>Sqlite</h3>
+                    </a>
+                    <a
+                        class="skill"
+                        title="Was ist MySQL?"
+                        href="https://www.mysql.com/de/"
+                    >
+                        <MySql />
+                        <h3>MySQL</h3>
+                    </a>
+                </div>
+            </div>
+            <div class="andere">
+                <h2>Andere</h2>
+                <div class="skills">
+                    <a
+                        class="skill"
+                        title="Was ist Linux?"
+                        href="https://de.wikipedia.org/wiki/Linux"
+                    >
+                        <img alt="Linux Pinguin" src={Linux}/>
+                        <h3>Linux</h3>
+                    </a>
+                    <a
+                        class="skill"
+                        title="Was ist Git?"
+                        href="https://git-scm.com"
+                    >
+                        <Git />
+                        <h3>Git</h3>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</HeadingContainer>
+
+<style>
+    :global(.skill img),
+    :global(.skill .icon svg) {
+        width: 3rem;
+    }
+
+    /* .backend,
+    .database {
+        margin-top: 1rem
+    } */
+
+    .skills {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+    }
+    
+    .skills .skill {
+        padding: 1rem;
+        color: black;
+        border-radius: 5px;
+        text-decoration: none;
+        background-color: white;
+        box-shadow: inset 0px 0px 2px rgb(181, 181, 181);
+    }
+
+    .skills .skill h3 {
+        text-align: center;
+    }
+
+    .skills .skill:hover {
+        color: var(--accent-color, blue);
+        text-decoration: underline !important;
+    }
+
+    .last-container {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+        grid-template-columns: 1fr 1fr;
+        height: 10rem;
+    }
+</style>
+
+<script>
+    import Flask from "$lib/icons/dev/Flask.svelte"
+    import MySql from "$lib/icons/dev/MySql.svelte"
+    import Sqlite from "$lib/icons/dev/Sqlite.svelte"
+    import C from "$lib/icons/dev/C.svelte"
+    import NodeJs from "$lib/icons/dev/NodeJs.svelte"
+    import Express from "$lib/icons/dev/Express.svelte"
+    import Go from "$lib/icons/dev/Go.svelte"
+    import Python from "$lib/icons/dev/Python.svelte"
+    import Javascript from "$lib/icons/dev/Javascript.svelte"
+    import Svelte from "$lib/icons/dev/Svelte.svelte"
+    import React from "$lib/icons/dev/React.svelte"
+    import Css from "$lib/icons/dev/Css.svelte"
+    import Html from "$lib/icons/dev/Html.svelte"
+    import Git from "$lib/icons/dev/Git.svelte"
+    import Nginx from "$lib/icons/dev/Nginx.svelte"
+    import Linux from "$lib/assets/linux.svg"
+    
+    import HeadingContainer from "$lib/container/heading-container.svelte";
+</script>

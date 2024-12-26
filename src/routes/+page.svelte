@@ -1,73 +1,9 @@
 <Header />
-<HeadingContainer heading="Skills">
-    <div class="skills-container">
-        <div class="frontend">
-            <h2>Frontend</h2>
-            <div class="skills">
-                <div class="skill">
-                    <Html/>
-                    <h3>Html</h3>
-                </div>
-                <div class="skill">
-                    <Css/>
-                    <h3>CSS</h3>
-                </div>
-                <div class="skill">
-                    <Javascript />
-                    <h3>Javascript</h3>
-                </div>
-                <div class="skill">
-                    <React />
-                    <h3>React</h3>
-                </div>
-                <div class="skill">
-                    <Svelte />
-                    <h3>Svelte</h3>
-                </div>
-            </div>
-        </div>
-        <div class="backend">
-            <h2>Backend</h2>
-            <div class="skills">
-                <div class="skill">
-                    <Python />
-                    <h3>Python</h3>
-                </div>
-                <div class="skill">
-                    <Go />
-                    <h3>Go</h3>
-                </div>
-                <div class="skill">
-                    <C />
-                    <h3>C</h3>
-                </div>
-                <div class="skill">
-                    <NodeJs />
-                    <h3>Node.js</h3>
-                </div>
-                <div class="skill">
-                    <Express />
-                    <h3>ExpressJS</h3>
-                </div>
-                <div class="skill">
-                    <Flask />
-                    <h3>Flask</h3>
-                </div>
-            </div>
-        </div>
-        <div class="database">
-            <h2>Datenbanken</h2>
-            <div class="skills">
-                <div class="skill">
-                    <Sqlite />
-                    <h3>Sqlite</h3>
-                </div>
-                <div class="skill">
-                    <MySql />
-                    <h3>MySQL</h3>
-                </div>
-            </div>
-        </div>
+<HeadingContainer heading="Über mich">
+    <div class="about-me">
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt culpa error, sunt commodi cum qui nobis id corrupti fuga ducimus fugit architecto laboriosam iste, ex, illum libero magnam omnis porro rerum odit! Voluptatum rerum tempore dolorem repellendus dicta exercitationem itaque, nam praesentium minima nihil minus. Eum voluptate commodi veniam veritatis?
+        </p>
     </div>
 </HeadingContainer>
 <HeadingContainer heading="Projekte">
@@ -81,61 +17,58 @@
             Eine einfache statische Webseite für den
             Kanuverleih von meinem Vater.
         </Project>
+        <Project
+            src="/videos/chat_800.mp4"
+            liveProject="https://easychat.maurice-ueberfeld.de"
+            projectLink="https://github.com/M-U-16/EasyChat"
+        >
+            <h2 slot="head">EasyChat</h2>
+            EasyChat ist eine einfache Chat Anwendung die,
+            mithilfe von Websockets (<a href="https://socket.io" target="_blank">Socket.IO</a>),
+            eine textbasierte Echtzeit Unterhaltung ermöglicht.
+            <span slot="live-link">Test Seite</span>
+        </Project>
     </div>
 </HeadingContainer>
+<Skills />
 <Footer />
 
 <script>
-    import Flask from "$lib/icons/Flask.svelte"
-    import MySql from "$lib/icons/MySql.svelte"
-    import Sqlite from "$lib/icons/Sqlite.svelte"
-    import C from "$lib/icons/C.svelte"
-    import NodeJs from "$lib/icons/NodeJs.svelte"
-    import Express from "$lib/icons/Express.svelte"
-    import Go from "$lib/icons/Go.svelte"
-    import Python from "$lib/icons/Python.svelte"
-    import Javascript from "$lib/icons/Javascript.svelte"
-    import Svelte from "$lib/icons/Svelte.svelte"
-    import React from "$lib/icons/React.svelte"
-    import Css from "$lib/icons/Css.svelte"
-    import Html from "$lib/icons/Html.svelte"
-    
-    import HeadingContainer from "$lib/components/heading-container.svelte";
-    import Footer from "$lib/components/Footer.svelte"
-    import Header from "$lib/Header.svelte";
+    import Skills from "$lib/Skills.svelte"
+    import Footer from "$lib/Footer.svelte"
+    import Header from "$lib/Header.svelte"
     import Project from "$lib/components/Project.svelte"
+    import HeadingContainer from "$lib/container/heading-container.svelte";
 </script>
 
 <style>
     .projects-container {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: 1fr 1fr;
+        
         width: 100%;
         min-height: 30vh;
-        margin: 1rem 0;
     }
 
-    :global(.skill .icon svg) {
-        width: 3rem;
-    }
-
-    .backend,
-    .database {
-        margin-top: 1rem
-    }
-
-    .skills {
-        display: flex;
-        gap: 0.5rem;
-        flex-wrap: wrap;
-    }
-    
-    .skills .skill {
-        padding: 1rem;
-        border-radius: 5px;
-        background-color: white;
-        box-shadow: inset 0px 0px 2px rgb(181, 181, 181);
-    }
-
-    .skills .skill h3 {
+    /* .view-more {
+        width: 100%;
+        padding: 0.8rem;
         text-align: center;
+        grid-column: span 2;
+        border-radius: 5px;
+        border: 1px solid var(--accent-color);
+        text-decoration: none;
+    } */
+
+    .about-me p {
+        font-size: 1.2rem;
+    }
+
+    @media screen and (max-width: 900px) {
+        .projects-container {
+            display: flex;
+            flex-direction: column;
+        }
     }
 </style>

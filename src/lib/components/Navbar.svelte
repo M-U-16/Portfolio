@@ -10,21 +10,18 @@
         <nav>
             <a
                 class="link"
-                class:active={current=="/about_me"}
-                href="/about_me"
-            >Über mich</a>
-            <a
-                class="link"
                 class:active={current=="/projekte"}
                 href="/projekte"
             >Projekte</a>
         </nav>
+        <MenuButton />
     <!-- </div> -->
 </div>
 </div>
 
 <script>
     import {page} from "$app/stores"
+    import MenuButton from "$lib/components/MenuButton.svelte"
     let current
     $: current = $page.url.pathname
 </script>
