@@ -1,13 +1,15 @@
 <div class="project">
     <video autoplay loop muted playsinline>
-        <source src={src} type="video/webm">
+        <source src={src} type={type}>
         <track kind="captions" />
     </video>
     <div class="project-info">
+        
         <slot name="head"/>
         <div class="description">
-            <slot/>
+            <slot name="description"/>
         </div>
+        <slot name="techs" />
         <div class="links">
             <a
             href={liveProject}
@@ -36,6 +38,7 @@
     import Open from "$lib/icons/Open.svelte"
 
     export let src
+    export let type
     export let projectLink
     export let liveProject
 </script>
@@ -45,7 +48,7 @@
         display: grid;
         grid-template-columns: subgrid;
         grid-template-rows: auto 1fr;
-        max-height: 30rem;
+        /* max-height: 30rem; */
 
         width: 100%;
         box-shadow: 0px 0px 3px rgb(202, 202, 202);
@@ -55,7 +58,6 @@
     }
 
     .project video {
-       /*  width: 100%; */
        width: 100%;
        max-height: min-content;
     }
@@ -119,5 +121,22 @@
     .github-repo:hover {
         background-color: transparent;
         color: black;
+    }
+
+    @media screen and (max-width: 400px) {
+        .links {
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .links a {
+            width: 100%;
+        }
+    }
+
+    @media screen and (max-width: 380px) {
+        .project {
+            border-radius: 0;
+        }
     }
 </style>

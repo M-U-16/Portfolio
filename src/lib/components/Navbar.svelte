@@ -1,28 +1,41 @@
 <div class="navbar-container">
 <div class="navbar">
-    <!-- <div class="container flex-center"> -->
-        <a class="logo" href="/" class:active={current == "/"}>
-            <h1>
-                <span>Maurice</span>
-                <span>Ueberfeld</span>
-            </h1>
-        </a>
-        <nav>
+    <a class="logo" href="/" class:active={current == "/"}>
+        <h1>
+            <span>Maurice</span>
+            <span>Ueberfeld</span>
+        </h1>
+    </a>
+    <div class="menu">
+        <MenuButton toggleMenu={toggleMenu} />
+        <nav class:active={navActive}>
+            <a
+                class="link"
+                class:active={current+currentHash =="/#about_me"}
+                href="/#about_me"
+            >Über mich</a>
             <a
                 class="link"
                 class:active={current=="/projekte"}
                 href="/projekte"
             >Projekte</a>
         </nav>
-        <MenuButton />
-    <!-- </div> -->
+    </div>
 </div>
 </div>
 
 <script>
     import {page} from "$app/stores"
     import MenuButton from "$lib/components/MenuButton.svelte"
-    let current
+    
+    let navActive = false
+
+    function toggleMenu() {
+        navActive = !navActive
+    }
+
+    let current, currentHash
+    $: currentHash = $page.url.hash
     $: current = $page.url.pathname
 </script>
 
@@ -37,7 +50,7 @@
     width: 100%;
     display: flex;
     position: fixed;
-    z-index: 1000;
+    z-index: 99999;
     align-items: center;
     background-color: white;
     view-transition-name: navbar;
@@ -46,10 +59,29 @@
     box-shadow: var(--default-box-shadow);
 }
 
+.navbar .menu {
+    display: flex;
+    height: 100%;
+    position: relative;
+    align-items: center;
+}
+
 .navbar nav {
     display: flex;
     align-items: center;
+    
 }
+
+/* .navbar nav::before {
+    width: 100vw;
+    position: absolute;
+    content: "";
+    right: 0;
+    height: 10rem;
+    background-color: rgb(255, 255, 255);
+    opacity: 0;
+    pointer-events: none;
+} */
 
 .navbar nav .link {
     color: black;
@@ -124,4 +156,32 @@
     font-family: monospace;
     font-size: 1.2rem;
 }
+
+@media screen and (max-width: 500px) {
+    .navbar nav {
+        opacity: 0;
+        pointer-events: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 10rem;
+        align-items: start;
+        flex-direction: column;
+        box-shadow: var(--default-box-shadow);
+    }
+
+    .navbar nav::before {
+        opacity: 1;
+    }
+
+    .navbar nav.active {
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    .navbar nav .link {
+        font-size: 1.5rem;
+    }
+}
+
 </style>

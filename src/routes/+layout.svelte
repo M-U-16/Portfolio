@@ -9,7 +9,6 @@
     import {page} from "$app/stores"
     import { onNavigate } from "$app/navigation"
     import Navbar from "$lib/components/Navbar.svelte";
-    import ReactiveNavbar from "$lib/components/ReactiveNavbar.svelte";
     
     onNavigate((nav)=> {
 

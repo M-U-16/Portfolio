@@ -8,11 +8,10 @@
                 angehender Softwareentwickler und Technikbegeisterter.
             </h1>
             <p>
-                Zurzeit bin ich dabei mein Abitur zu machen.
-                Für meinen Weg nach dem Abitur, suche ich nach
-                einem Unternehmen, bei dem ich meine Leidenschaft, das Programmieren,
-                auch beruflich ausführen kann und mein Wissen in den Bereichen der
-                Softwareentwicklung zu erweitern. 
+                Zurzeit mache ich mein Abitur.
+                Für meinen Weg nach dem Abitur suche ich
+                ein Unternehmen, bei dem ich meine Leidenschaft für das Programmieren
+                auch beruflich ausführen kann.
             </p>
         </div>
         <div class="links">
@@ -59,8 +58,9 @@
         background: url(/reduced-topography.svg);
         background-position: 0 0;
         background-attachment: fixed;
-        view-transition-name: header-container;
         transition: 0.1s linear;
+
+       /*  view-transition-name: header-container; */
     }
     
     header {

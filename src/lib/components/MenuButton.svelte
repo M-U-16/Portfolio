@@ -17,7 +17,7 @@
 
 <style>
 .hamburger-button {
-    display: flex;
+    display: none;
     cursor: pointer;
     position: relative;
     flex-direction: column;
@@ -49,7 +49,6 @@
 .hamburger-button span:nth-child(2) {
     top: 50%;
     transform: translateY(-50%);
-    /* translate: 10px; */
 }
 
 .hamburger-button span:nth-child(3) {
@@ -76,9 +75,9 @@
     width: 110%;
 }
 
-@media (min-width: 1000px) {
+@media (max-width: 500px) {
     .hamburger-button {
-        display: none;
+        display: flex;
     }
 }
 </style>

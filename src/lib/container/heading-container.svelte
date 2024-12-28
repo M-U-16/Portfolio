@@ -1,5 +1,5 @@
 <div class="heading-container">
-    <h1>{heading}</h1>
+    <h1 id={id}>{heading}</h1>
     <slot/>
 </div>
 
@@ -8,6 +8,7 @@
         margin: 1rem auto;
         width: var(--default-width);
         max-width: var(--default-max-width);
+        height: auto;
     }
 
     .heading-container h1 {
@@ -20,5 +21,12 @@
 </style>
 
 <script>
+    import { onMount } from "svelte";
+
     export let heading
+    export let id = ""
+
+    onMount(() => {
+        console.log(id)
+    })
 </script>

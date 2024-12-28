@@ -3,7 +3,7 @@
     <div class="contact">
         <a href="tel:+491797618554">
             <Call />
-            <span>Anrufen</span>
+            <span>Anrufen*</span>
         </a>
         <div class="text">
             <p>+49 179 7618554</p>
@@ -19,7 +19,7 @@
         </div>
     </div>
     <div class="contact-time">
-        <p>Montag bis Freitag: ab 17 Uhr (während der Schulzeit)</p>
+        <p>*Montag bis Freitag: ab 17 Uhr (während der Schulzeit)</p>
         <p>Wochenende: i.d.R offen</p>
     </div>
 </div>
@@ -55,6 +55,10 @@
         border-radius: 5px 0 0 5px;
         width: 7rem;
     }
+
+    .contact a span {
+        display: flex;
+    }
     
     .contact .text {
         overflow: hidden;
@@ -63,5 +67,11 @@
     
     .contact-time {
         color: grey;
+    }
+
+    @media screen and (max-width: 380px) {
+        .contacts {
+            padding: 1rem;
+        }
     }
 </style>

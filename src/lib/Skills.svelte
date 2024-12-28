@@ -154,15 +154,15 @@
 </HeadingContainer>
 
 <style>
-    :global(.skill img),
-    :global(.skill .icon svg) {
-        width: 3rem;
+    .skills-container {
+        overflow: hidden;
+        height: min-content;
     }
 
-    /* .backend,
-    .database {
-        margin-top: 1rem
-    } */
+    :global(.skill img),
+    :global(.skill .icon svg) {
+        width: 2rem;
+    }
 
     .skills {
         display: flex;
@@ -173,6 +173,10 @@
     .skills .skill {
         padding: 1rem;
         color: black;
+        width: 6rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         border-radius: 5px;
         text-decoration: none;
         background-color: white;
@@ -193,7 +197,13 @@
         gap: 2rem;
         align-items: center;
         grid-template-columns: 1fr 1fr;
-        height: 10rem;
+    }
+
+    @media screen and (max-width: 500px) {
+        .last-container {
+            flex-direction: column;
+            align-items: start;
+        }
     }
 </style>
 
