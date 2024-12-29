@@ -1,0 +1,15 @@
+[Unit]
+Description=EasyChat Backend
+After=network.target
+StartLimitBurst=3
+StartLimitIntervalSec=60
+Restart=on-failure
+RestartSec=3
+
+[Service]
+ExecStart=/usr/bin/podman run --rm --name portfolio_service
+ExecStop=/usr/bin/podman stop portfolio_service
+ExecRestart=/usr/bin/podman restart portfolio_service
+
+[Install]
+WantedBy=multi-user.target

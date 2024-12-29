@@ -1,0 +1,11 @@
+[Unit]
+Description=Portfolio Socket
+
+[Socket]
+Accept=no
+RemoveOnStop=yes
+Service=portfolio.service
+ListenStream=/tmp/portfolio.sock
+
+[Install]
+WantedBy=sockets.target

@@ -7,17 +7,19 @@
         </h1>
     </a>
     <div class="menu">
-        <MenuButton toggleMenu={toggleMenu} />
+        <MenuButton toggleMenu={toggleMenu} active={navActive} />
         <nav class:active={navActive}>
             <a
                 class="link"
-                class:active={current+currentHash =="/#about_me"}
+                class:active={current =="/#about_me"}
                 href="/#about_me"
+                on:click={() => navActive=false}
             >Über mich</a>
             <a
                 class="link"
-                class:active={current=="/projekte"}
-                href="/projekte"
+                class:active={current =="/#projekte"}
+                href="/#projekte"
+                on:click={() => navActive=false}
             >Projekte</a>
         </nav>
     </div>
@@ -34,54 +36,44 @@
         navActive = !navActive
     }
 
-    let current, currentHash
-    $: currentHash = $page.url.hash
-    $: current = $page.url.pathname
+    let current
+    $: current = $page.url.pathname + $page.url.hash
 </script>
 
 <style>
 .navbar-container {
-    height: var(--navbar-height);
     width: 100%;
+    height: var(--navbar-height);
 }
 
 .navbar {
     --shadow-gradient: 180deg, rgba(194, 194, 194, 0.21), transparent;
+    
     width: 100%;
+    height: var(--navbar-height);
+    z-index: 1000;
     display: flex;
     position: fixed;
-    z-index: 99999;
     align-items: center;
     background-color: white;
-    view-transition-name: navbar;
-    height: var(--navbar-height);
     justify-content: space-between;
+    view-transition-name: navbar;
     box-shadow: var(--default-box-shadow);
 }
 
 .navbar .menu {
     display: flex;
+    justify-content: center;
     height: 100%;
     position: relative;
     align-items: center;
+    view-transition-name: disabled;
 }
 
-.navbar nav {
+.navbar .menu nav {
     display: flex;
     align-items: center;
-    
 }
-
-/* .navbar nav::before {
-    width: 100vw;
-    position: absolute;
-    content: "";
-    right: 0;
-    height: 10rem;
-    background-color: rgb(255, 255, 255);
-    opacity: 0;
-    pointer-events: none;
-} */
 
 .navbar nav .link {
     color: black;
@@ -90,9 +82,11 @@
     text-decoration: none;
     margin: 0.5rem 0.8rem;
 }
+
 .navbar nav .link:last-child {
     margin-right: 2rem;
 }
+
 .navbar nav .link::after {
     z-index: 2;
     width: 2px;
@@ -158,29 +152,50 @@
 }
 
 @media screen and (max-width: 500px) {
+    .navbar .menu {
+        width: 3rem;
+    }
+
     .navbar nav {
         opacity: 0;
         pointer-events: none;
-        position: absolute;
+        position: absolute !important;
         top: 100%;
         right: 0;
-        width: 10rem;
-        align-items: start;
+
+        padding: 1rem;
+        width: 50vw;
+
         flex-direction: column;
-        box-shadow: var(--default-box-shadow);
-    }
+        align-items: start !important;
+        box-shadow: var(--default-box-shadow), 0px 0px 5px rgb(190, 190, 190);
+        overflow: hidden;
+        background-color: white;
+        transform: translateY(20px);
+        border-radius: 5px;
 
-    .navbar nav::before {
-        opacity: 1;
+        transition:
+            opacity 0.2s ease,
+            transform 0.3s ease;
     }
-
+    
     .navbar nav.active {
         opacity: 1;
         pointer-events: all;
+        transform: translateY(10px) translateX(-10px);
     }
 
     .navbar nav .link {
         font-size: 1.5rem;
+        margin: 0;
+    }
+    
+    .navbar nav a:nth-child(2) {
+        margin-top: 0.5rem;
+    }
+    
+    .navbar nav .link::after {
+        height: 80%;
     }
 }
 

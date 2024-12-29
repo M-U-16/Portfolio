@@ -10,9 +10,7 @@
     import { onNavigate } from "$app/navigation"
     import Navbar from "$lib/components/Navbar.svelte";
     
-    onNavigate((nav)=> {
-
-        /* if (nav.to.route.id == "/") */
+    /* onNavigate((nav)=> {
         if ($page.url.pathname == nav.to.route.id) {
             return
         }
@@ -24,5 +22,5 @@
                 await nav.complete
             })
         })
-    })
+    }) */
 </script>

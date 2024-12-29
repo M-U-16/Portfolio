@@ -23,9 +23,9 @@
     flex-direction: column;
     background-color: transparent;
     border: none;
-    width: 2rem;
-    height: 1.5rem;
-    margin-right: 1rem;
+    width: 1.5rem;
+    height: 1.3rem;
+    /* margin-right: 1rem; */
     z-index: 3;
     overflow: hidden;
     outline: none;
@@ -35,7 +35,7 @@
     display: block;
     width: 100%;
     height: 3px; 
-    background: var(--accent-color);
+    background-color: var(--accent-color);
     position: absolute;
     right: 0;
     margin-left: auto; margin-right: auto;

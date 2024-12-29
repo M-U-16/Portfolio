@@ -175,6 +175,7 @@
         color: black;
         width: 6rem;
         display: flex;
+        font-size: 1rem;
         flex-direction: column;
         align-items: center;
         border-radius: 5px;
@@ -199,12 +200,17 @@
         grid-template-columns: 1fr 1fr;
     }
 
-    @media screen and (max-width: 500px) {
+    .skills-container > div:nth-child(2),
+    .skills-container > div:nth-child(3) {
+        margin-top: 1rem;
+    }
+
+    /* @media screen and (max-width: 500px) {
         .last-container {
             flex-direction: column;
             align-items: start;
         }
-    }
+    } */
 </style>
 
 <script>

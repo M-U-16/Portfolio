@@ -9,14 +9,14 @@
             habe angefangen mich intensiv mit HTML und CSS zu beschäftigen,
             um meine Fähigkeiten in der Web-Entwicklung zu verbessern.
             Durch kleine Projekte und erste Berührungspunkten mit Javascript Bibliotheken wie z.B.
-            <a href="https://webpack.js.org">Webpack</a> zum ersten mal
-            habe ich, mehr oder weniger, verstanden
+            <a href="https://webpack.js.org">Webpack</a> habe ich zum ersten mal,
+            mehr oder weniger, verstanden
             wie HTML und CSS mithilfe von Javascript verändert
-            werden können.
+            werden kann und welche Möglichkeiten es für die Gestaltung von Webseiten bietet.
         </p>
     </div>
 </HeadingContainer>
-<HeadingContainer heading="Projekte">
+<HeadingContainer heading="Projekte" id="projekte">
     <div class="projects-container">
         <Project
             type="video/webm"
@@ -42,7 +42,7 @@
         >
             <div slot="techs">
                 <h4>Technologien:</h4>
-                <p>Svelte, Typescript, Nodejs (Express)</p>
+                <p>Svelte, Typescript, Nodejs (Express), SQlite</p>
             </div>
             <h2 slot="head">EasyChat</h2>
             <p slot="description">
@@ -92,6 +92,12 @@
         .projects-container {
             display: flex;
             flex-direction: column;
+        }
+    }
+
+    @media screen and (max-width: 500px) {
+        .about-me p {
+            font-size: 1rem;
         }
     }
 

@@ -1,21 +1,25 @@
 <div class="contacts">
     <h2>Kontakt</h2>
-    <div class="contact">
-        <a href="tel:+491797618554">
-            <Call />
-            <span>Anrufen*</span>
-        </a>
-        <div class="text">
-            <p>+49 179 7618554</p>
+    <div class="all-contacts">
+        <div class="tel-container">
+            <div class="contact">
+                <a href="tel:+491797618554">
+                    <Call />
+                    <span>Anrufen*</span>
+                </a>
+                <div class="text">
+                    <p>+49 179 7618554</p>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="contact">
-        <a href="mailto:maurice-u@gmx.de">
-            <Mail />
-            <span>Mailen</span>
-        </a>
-        <div class="text">
-            <p>maurice-u@gmx.de</p>
+        <div class="contact">
+            <a href="mailto:maurice-u@gmx.de">
+                <Mail />
+                <span>Mailen</span>
+            </a>
+            <div class="text">
+                <p>maurice-u@gmx.de</p>
+            </div>
         </div>
     </div>
     <div class="contact-time">
@@ -27,11 +31,13 @@
 <script>
     import Call from "$lib/icons/Call.svelte"
     import Mail from "$lib/icons/Mail.svelte"
+
 </script>
 
 <style>
     .contacts {
         padding: 1rem 2rem;
+        width: 100%;
     }
     
     .contact {
@@ -45,7 +51,7 @@
     
     .contact a {
         display: flex;
-        justify-content: space-around;
+        justify-content: space-start;
         align-items: center;
         gap: 0.5rem;
         background-color: var(--accent-color);
@@ -53,7 +59,7 @@
         text-decoration: none;
         padding: 0.5rem 1rem;
         border-radius: 5px 0 0 5px;
-        width: 7rem;
+        width: 7.5rem;
     }
 
     .contact a span {
@@ -68,6 +74,14 @@
     .contact-time {
         color: grey;
     }
+
+    @media screen and (min-width: 900px) {
+        .all-contacts {
+            display: flex;
+            width: 100%;
+            gap: 1rem;
+        }
+    }    
 
     @media screen and (max-width: 380px) {
         .contacts {

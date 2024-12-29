@@ -17,16 +17,17 @@
         font-size: 2rem;
         color: var(--accent-color);
         font-stretch: expanded;
+        scroll-margin: var(--navbar-height);
+    }
+
+    @media screen and (max-width: 500px) {
+        .heading-container h1 {
+            font-size: 1.6rem;
+        }
     }
 </style>
 
 <script>
-    import { onMount } from "svelte";
-
     export let heading
     export let id = ""
-
-    onMount(() => {
-        console.log(id)
-    })
 </script>

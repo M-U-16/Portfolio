@@ -13,6 +13,7 @@
     footer {
         display: flex;
         align-items: center;
+        justify-content: center;
         width: 100%;
         border-radius: 5px 5px 0 0;
         background-color: white;
@@ -23,4 +24,5 @@
         width: 1.5rem;
         height: 1.5rem;
     }
+
 </style>
