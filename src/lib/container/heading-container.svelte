@@ -1,5 +1,7 @@
 <div class="heading-container">
-    <h1 id={id}>{heading}</h1>
+    <slot name="heading" >
+        <h1 id={id}>{heading}</h1>
+    </slot>
     <slot/>
 </div>
 

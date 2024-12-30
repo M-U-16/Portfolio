@@ -9,18 +9,22 @@
         <div class="description">
             <slot name="description"/>
         </div>
-        <slot name="techs" />
+        <div class="techs">
+            <slot name="techs" />
+        </div>
         <div class="links">
-            <a
-            href={liveProject}
-            target="_blank"
-            class="live-site"
-            >
-                <Open />
-                <slot name="live-link">
-                    <span>Live Seite</span>
-                </slot>
-            </a>
+            {#if liveProject != ""}
+                <a
+                href={liveProject}
+                target="_blank"
+                class="live-site"
+                >
+                    <Open />
+                    <slot name="live-link">
+                        <span>Live Seite</span>
+                    </slot>
+                </a>
+            {/if}
             <a
                 href={projectLink}
                 target="_blank"
@@ -40,7 +44,7 @@
     export let src
     export let type
     export let projectLink
-    export let liveProject
+    export let liveProject = ""
 </script>
 
 <style>
@@ -48,7 +52,6 @@
         display: grid;
         grid-template-columns: subgrid;
         grid-template-rows: auto 1fr;
-        /* max-height: 30rem; */
 
         width: 100%;
         box-shadow: 0px 0px 3px rgb(202, 202, 202);
@@ -62,11 +65,31 @@
        max-height: min-content;
     }
 
+    /* .project .image-container {
+        height: 190px;
+        width: 100%;
+        overflow: hidden;
+    } 
+    .project .imgage-container img {
+        height: 100%;
+    } */
+
     .project-info {
         display: grid;
         grid-template-rows: auto 1fr auto;
         
         padding: 0.5rem 1rem 1rem 1rem;
+    }
+
+    .description {
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+        width: 100%;
+    }
+
+    .project .techs {
+        font-size: 0.8rem;
+        padding: 0.5rem 0;
     }
 
     .links {
@@ -89,12 +112,6 @@
         color: white;
         font-size: 1.1rem;
         transition: 0.3s ease;
-    }
-
-    .description {
-        margin-bottom: 1rem;
-        font-size: 1.2rem;
-        width: 100%;
     }
 
     .live-site {

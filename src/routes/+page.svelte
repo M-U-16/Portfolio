@@ -12,11 +12,15 @@
             <a href="https://webpack.js.org">Webpack</a> habe ich zum ersten mal,
             mehr oder weniger, verstanden
             wie HTML und CSS mithilfe von Javascript verändert
-            werden kann und welche Möglichkeiten es für die Gestaltung von Webseiten bietet.
+            werden können und welche Möglichkeiten es für die Gestaltung von Webseiten bietet.
         </p>
     </div>
 </HeadingContainer>
-<HeadingContainer heading="Projekte" id="projekte">
+<HeadingContainer>
+    <div slot="heading" class="projects-headings">
+        <h1 id="projekte">Projekte</h1>
+        <h2>(an denen ich zurzeit Arbeite)</h2>
+    </div>
     <div class="projects-container">
         <Project
             type="video/webm"
@@ -29,10 +33,10 @@
                 Eine einfache statische Webseite für den
                 Kanuverleih von meinem Vater.
             </p>
-            <div slot="techs">
-                <h4>Technologien:</h4>
-                <p>Svelte</p>
-            </div>
+            <p slot="techs">
+                <b>Technologien:</b>
+                <span>Svelte</span>
+            </p>
         </Project>
         <Project
             type="video/mp4"
@@ -40,15 +44,50 @@
             liveProject="https://easychat.maurice-ueberfeld.de"
             projectLink="https://github.com/M-U-16/EasyChat"
         >
-            <div slot="techs">
-                <h4>Technologien:</h4>
-                <p>Svelte, Typescript, Nodejs (Express), SQlite</p>
-            </div>
             <h2 slot="head">EasyChat</h2>
             <p slot="description">
-                EasyChat ist eine einfache Chat Anwendung die,
+                EasyChat ist ein persönliches Projekt,
+                welches aus einer einfachen Chat Anwendung besteht, die,
                 mithilfe von Websockets (<a href="https://socket.io" target="_blank">Socket.IO</a>),
                 eine textbasierte Echtzeit Unterhaltung ermöglicht.
+            </p>
+            <p slot="techs">
+                <b>Technologien:</b>
+                <span>Svelte, Typescript, Nodejs (Express), SQlite</span>
+            </p>
+            <span slot="live-link">Test Seite</span>
+        </Project>
+        <Project
+            type="video/mp4"
+            src="/videos/dashboard_800.mp4"
+            projectLink="https://github.com/M-U-16/Wetterstation"
+        >
+            <h2 slot="head">Wetterstation</h2>
+            <p slot="description">
+                Die Wetterstation ist ein Projekt, an dem
+                ich im Rahmen des Informatik-Unterrichts arbeite.
+                Es geht um die Erfassung von verschiedenen Sensordaten
+                wie Temperatur und Luftfeuchtigkeit und die Darstellung
+                dieser in einem Web-Interface.
+            </p>
+            <p slot="techs">
+                <b>Technologien:</b>
+                <span>Python, Flask, Javascript (D3.js), SQlite</span>
+            </p>
+            <span slot="live-link">Test Seite</span>
+        </Project>
+        <Project
+            type="video/mp4"
+            src="/videos/myplayer.mkv"
+            projectLink="https://github.com/M-U-16/MediaPlayer"
+        >
+            <h2 slot="head">MediaPlayer</h2>
+            <p slot="description">
+                Die Wetterstation ist ein Projekt, an dem ich im Rahmen des Informatik-Unterrichts arbeite. Es geht um die Erfassung von verschiedenen Sensordaten wie Temperatur und Luftfeuchtigkeit und die Darstellung dieser in einem Web-Interface.
+            </p>
+            <p slot="techs">
+                <b>Technologien:</b>
+                <span>C (SDL2, FFMPEG)</span>
             </p>
             <span slot="live-link">Test Seite</span>
         </Project>
@@ -86,6 +125,29 @@
 
     :global(#about_me) {
         scroll-margin: var(--navbar-height);
+    }
+
+
+    .projects-headings {
+        padding: 1rem 0;
+    }
+
+    .projects-headings h1 {
+        padding: 0;
+        font-weight: 500;
+        font-size: 2rem;
+        color: var(--accent-color);
+        font-stretch: expanded;
+        scroll-margin: var(--navbar-height);
+    }
+    
+    .projects-headings h2 {
+        padding: 0;
+        font-weight: 500;
+        font-size: 1rem;
+        color: var(--accent-color);
+        font-stretch: expanded;
+
     }
 
     @media screen and (max-width: 900px) {
