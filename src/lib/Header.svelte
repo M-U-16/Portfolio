@@ -55,7 +55,7 @@
         height: 50vh;
         min-height: 30rem;
         align-items: center;
-        background: url(/reduced-topography.svg);
+        background: url(/header-background.svg);
         background-position: 0 0;
         background-attachment: fixed;
         transition: 0.1s linear;

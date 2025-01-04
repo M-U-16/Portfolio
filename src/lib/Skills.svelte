@@ -7,6 +7,7 @@
                     class="skill"
                     title="Was ist Html?"
                     href="https://de.wikipedia.org/wiki/Hypertext_Markup_Language"
+                    target="_blank"
                 >
                     <Html/>
                     <h3>Html</h3>
@@ -14,7 +15,8 @@
                 <a
                     class="skill"
                     title="Was ist Css?"
-                    href="https://de.wikipedia.org/wiki/Cascading_Style_Sheets"  
+                    href="https://de.wikipedia.org/wiki/Cascading_Style_Sheets"
+                    target="_blank"  
                 >
                     <Css/>
                     <h3>CSS</h3>
@@ -23,6 +25,7 @@
                     class="skill"
                     title="Was ist Javascript?"
                     href="https://de.wikipedia.org/wiki/JavaScript"
+                    target="_blank"
                 >
                     <Javascript />
                     <h3>Javascript</h3>
@@ -31,6 +34,7 @@
                     class="skill"
                     title="Was ist React?"
                     href="https://react.dev/"
+                    target="_blank"
                 >
                     <React />
                     <h3>React</h3>
@@ -39,6 +43,7 @@
                     class="skill"
                     title="Was ist Svelte?"
                     href="https://svelte.dev"
+                    target="_blank"
                 >
                     <Svelte />
                     <h3>Svelte</h3>
@@ -52,6 +57,7 @@
                     class="skill"
                     title="Was ist Python?"
                     href="https://www.python.org"
+                    target="_blank"
                 >
                     <Python />
                     <h3>Python</h3>
@@ -60,6 +66,7 @@
                     class="skill"
                     title="Was ist Go?"
                     href="https://go.dev"
+                    target="_blank"
                 >
                     <Go />
                     <h3>Go</h3>
@@ -68,6 +75,7 @@
                     class="skill"
                     title="Was ist C?"
                     href="https://en.wikipedia.org/wiki/C_(programming_language)"
+                    target="_blank"
                 >
                     <C />
                     <h3>C</h3>
@@ -76,6 +84,7 @@
                     class="skill"
                     title="Was ist Node.js"
                     href="https://nodejs.org/en"
+                    target="_blank"
                 >
                     <NodeJs />
                     <h3>Node.js</h3>
@@ -84,6 +93,7 @@
                     class="skill"
                     title="Was ist ExpressJS?"
                     href="https://expressjs.com"
+                    target="_blank"
                 >
                     <Express />
                     <h3>ExpressJS</h3>
@@ -92,6 +102,7 @@
                     class="skill"
                     title="Was ist Flask?"
                     href="https://de.wikipedia.org/wiki/Flask"
+                    target="_blank"
                 >
                     <Flask />
                     <h3>Flask</h3>
@@ -99,7 +110,8 @@
                 <a
                     class="skill"
                     title="Was ist Nginx?"
-                    href="https://nginx.org/en"  
+                    href="https://nginx.org/en"
+                    target="_blank"
                 >
                     <Nginx />
                     <h3>Nginx</h3>
@@ -114,6 +126,7 @@
                         class="skill"
                         title="Was ist Sqlite?"
                         href="https://www.sqlite.org/index.html"
+                        target="_blank"
                     >
                         <Sqlite />
                         <h3>Sqlite</h3>
@@ -122,6 +135,7 @@
                         class="skill"
                         title="Was ist MySQL?"
                         href="https://www.mysql.com/de/"
+                        target="_blank"
                     >
                         <MySql />
                         <h3>MySQL</h3>
@@ -135,6 +149,7 @@
                         class="skill"
                         title="Was ist Linux?"
                         href="https://de.wikipedia.org/wiki/Linux"
+                        target="_blank"
                     >
                         <img alt="Linux Pinguin" src={Linux}/>
                         <h3>Linux</h3>
@@ -143,6 +158,7 @@
                         class="skill"
                         title="Was ist Git?"
                         href="https://git-scm.com"
+                        target="_blank"
                     >
                         <Git />
                         <h3>Git</h3>
@@ -205,12 +221,29 @@
         margin-top: 1rem;
     }
 
-    /* @media screen and (max-width: 500px) {
+    @media screen and (max-width: 500px) {
         .last-container {
-            flex-direction: column;
+            gap: 0;
             align-items: start;
+            flex-direction: column;
         }
-    } */
+
+        .last-container .andere {
+            margin-top: 1rem;
+        }
+
+        .skills .skill {
+            width: auto;
+            align-items: center;
+            gap: 0.5rem;
+            flex-direction: row;
+        }
+
+        :global(.skill img),
+        :global(.skill .icon svg) {
+            width: 1.5rem;
+        }
+    }
 </style>
 
 <script>

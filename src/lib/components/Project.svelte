@@ -40,11 +40,13 @@
 <script>
     import Github from "$lib/icons/dev/Github.svelte"
     import Open from "$lib/icons/Open.svelte"
+    import { onMount } from "svelte";
 
     export let src
     export let type
     export let projectLink
     export let liveProject = ""
+
 </script>
 
 <style>
@@ -61,18 +63,8 @@
     }
 
     .project video {
-       width: 100%;
-       max-height: min-content;
-    }
-
-    /* .project .image-container {
-        height: 190px;
         width: 100%;
-        overflow: hidden;
-    } 
-    .project .imgage-container img {
-        height: 100%;
-    } */
+    }
 
     .project-info {
         display: grid;
@@ -93,7 +85,7 @@
     }
 
     .links {
-        gap: 1rem;
+        gap: 0.5rem;
         height: 100%;
         display: flex;
     }
