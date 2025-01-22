@@ -54,9 +54,9 @@
         <Project
             type="video/mp4"
             src="/videos/chat_800.mp4"
-            liveProject="https://easychat.maurice-ueberfeld.de"
             projectLink="https://github.com/M-U-16/EasyChat"
         >
+            <!-- liveProject="https://easychat.maurice-ueberfeld.de" -->
             <h2 slot="head">EasyChat</h2>
             <p slot="description">
                 EasyChat ist ein privates Projekt,
@@ -68,7 +68,7 @@
                 <b>Technologien:</b>
                 <span>Svelte, Typescript, Nodejs (Express), SQlite</span>
             </p>
-            <span slot="live-link">Test Seite</span>
+           <!--  <span slot="live-link">Test Seite</span> -->
         </Project>
         <Project
             type="video/mp4"

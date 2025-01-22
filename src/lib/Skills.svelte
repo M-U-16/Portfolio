@@ -202,6 +202,7 @@
 
     .skills .skill h3 {
         text-align: center;
+        font-weight: 500;
     }
 
     .skills .skill:hover {

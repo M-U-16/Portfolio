@@ -1,5 +1,5 @@
 <div class="contacts">
-    <h2>Kontakt</h2>
+    <h2 class="standard-heading">Kontakt</h2>
     <div class="all-contacts">
         <div class="tel-container">
             <div class="contact">
@@ -36,8 +36,13 @@
 
 <style>
     .contacts {
-        padding: 1rem 2rem;
+        /* padding: 1rem 2rem; */
+        padding: 2rem 0;
         width: 100%;
+    }
+
+    .contacts h2 {
+        color: var(--accent-color);
     }
     
     .contact {

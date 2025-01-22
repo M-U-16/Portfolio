@@ -1,8 +1,8 @@
-<PageContainer>
-    <footer>
+<footer>
+    <PageContainer>
         <Contact />
-    </footer>
-</PageContainer>
+    </PageContainer>
+</footer>
 
 <script>
     import PageContainer from "$lib/container/page-container.svelte";
